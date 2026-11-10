@@ -65,7 +65,16 @@ data/raw/customer_support_tickets.csv
 
 ### 3. Run the notebooks
 
-Run the notebooks in order (`01_eda` → `05_evaluation`). The preprocessing notebook produces the cleaned text used by the later stages, and the pipeline notebooks save the trained models that the evaluation notebook loads.
+The EDA notebooks (`01_eda/`) run on their own. For the main pipeline, run in this order:
+
+1. `03_text_representation/Text-Preprocessing.ipynb` – cleans the text and builds the BoW, TF-IDF, Skip-gram and SBERT representations
+2. `02_clustering/ClusterningAnalysis.ipynb` – clustering sweep; saves the cluster labels
+3. `04_pipeline/` – embeddings visualisation, sentiment analysis and topic modelling; saves the trained models
+4. `05_evaluation/Evaluation.ipynb` – loads the saved models and labels for evaluation
+
+`02_clustering/LSA_PCA_UMAP.ipynb` is an exploratory notebook (LSA, PCA and UMAP dimensionality reduction before clustering) written against an earlier version of the clustering code. Its saved outputs show the results, but it does not run against the current pipeline without changes.
+
+> **Note:** the first run downloads the pre-trained `word2vec-google-news-300` model (about 1.6 GB) through Gensim, so preprocessing takes a while the first time.
 
 ## Team
 

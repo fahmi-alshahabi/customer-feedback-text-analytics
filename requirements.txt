@@ -18,6 +18,8 @@ contractions>=0.1.73
 vadersentiment>=3.3.2
 textblob>=0.18.0
 bertopic
+umap-learn
+wordcloud
 
 torch>=2.3
 tensorflow>=2.16
@@ -25,6 +27,7 @@ tensorflow>=2.16
 matplotlib>=3.8
 seaborn>=0.13
 plotly>=5.22
+kaleido
 jupyter>=1.0
 ipykernel>=6.29
 ipywidgets>=8.1
